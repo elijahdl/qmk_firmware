@@ -46,5 +46,7 @@ mkShell {
     # Prevent the avr-gcc wrapper from picking up host GCC flags
     # like -iframework, which is problematic on Darwin
     unset NIX_CFLAGS_COMPILE_FOR_TARGET
+    # Put bin in the PATH
+    export PATH=$(realpath -s bin):$PATH
   '';
 }
